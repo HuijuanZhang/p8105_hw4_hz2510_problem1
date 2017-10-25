@@ -5,3 +5,14 @@ date: "10/25/2017"
 output: html_document
 ---
 
+1. Load and tidy the pups data.
+
+```{r}
+library(tidyverse)
+library(janitor)
+
+pups_data = read_csv("./FAS_pups.csv", col_types = "ciiiii") %>%
+  clean_names() %>%
+  gather('pd_ears', 'pd_eyes', 'pd_pivot', 'pd_walk', key = "pd_outcome", value = "pd_days")
+```
+
