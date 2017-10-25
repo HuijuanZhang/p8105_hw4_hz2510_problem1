@@ -1,0 +1,7 @@
+---
+title: "Homework 4 Problem 1"
+author: "Huijuan Zhang"
+date: "10/25/2017"
+output: html_document
+---
+
