@@ -13,7 +13,8 @@ library(janitor)
 
 pups_data = read_csv("./FAS_pups.csv", col_types = "ciiiii") %>%
   clean_names() %>%
-  gather('pd_ears', 'pd_eyes', 'pd_pivot', 'pd_walk', key = "pd_outcome", value = "pd_days")
+  gather('pd_ears', 'pd_eyes', 'pd_pivot', 'pd_walk', key = "pd_outcome", value = "pd_days") %>% 
+  filter(!is.na(pd_days))
 ```
 
 2.Create a `violin` plot showing the distribution of post-natal days for each developmental landmark.
@@ -31,3 +32,5 @@ ggplot(pups_data, aes(x = pd_outcome, y = pd_days)) +
   ) + 
   theme(legend.position = "bottom")
 ```
+
+* The outcome __eyes__ have the longest post-natal days whereas __ears__ have the shortest post-natal days. The second longest is __walk__ and third is __pivot__.
