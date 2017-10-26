@@ -24,4 +24,4 @@ ggplot(pups_data, aes(x = pd_outcome, y = pd_days)) +
   theme(legend.position = "bottom")
 ```
 
-p8105_hw4_hz2510_problem1/problem 1 plot.png
+(p8105_hw4_hz2510_problem1/problem 1 plot.png)
