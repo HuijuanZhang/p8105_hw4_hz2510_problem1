@@ -19,6 +19,15 @@ pups_data = read_csv("./FAS_pups.csv", col_types = "ciiiii") %>%
 
 2.Create a `violin` plot showing the distribution of post-natal days for each developmental landmark.
 
+```{r setup_plot}
+knitr::opts_chunk$set(
+  fig.width = 6,
+  fig.asp = .7,
+  out.width = "80%"
+)
+```
+
+
 ```{r plot}
 library(ggthemes)
 
@@ -27,8 +36,8 @@ ggplot(pups_data, aes(x = pd_outcome, y = pd_days)) +
   stat_summary(fun.y = median, geom = "point", color = "blue", size = 2) +
   labs(
     title = "Distribution of post-natal days for Developmental landmarks",
-    x = "Post-natal days",
-    y = "Developmental landmark"
+    x = "Developmental landmark",
+    y = "Post-natal days"
   ) + 
   theme(legend.position = "bottom")
 ```
